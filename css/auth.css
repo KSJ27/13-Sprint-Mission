@@ -57,9 +57,6 @@
   padding: 1rem 1.5rem;
 }
 
-/*
-:focus-within이란 - 스스로 :focus 의사 클래스와 일치하거나, 그 자손 중 하나가 :focus와 일치하는 요소를 나타냄
-*/
 .form__field-input-wrapper--focused:focus-within {
   outline: 2px solid var(--blue100);
 }
@@ -127,4 +124,16 @@
   .main {
     max-width: 400px;
   }
+}
+
+.error {
+  outline: 2px solid var(--red);
+}
+
+.email-error-container {
+  color: var(--red);
+}
+
+.password-error-container {
+  color: var(--red);
 }
