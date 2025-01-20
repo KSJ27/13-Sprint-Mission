@@ -10,24 +10,28 @@
   font-family: "Pretendard-Regular", sans-serif;
   font-size: 16px;
 
-  --blue100: #3692ff;
-  --blue200: #1967d6;
-  --blue300: #1251aa;
+  --white: #ffffff;
+  --white-light: #fcfcfc;
+  --white-muted: #dfdfdf;
+
+  --blue-50: #cfe5ff;
+  --blue-100: #3692ff;
+  --blue-200: #1967d6;
+  --blue-300: #1251aa;
 
   --red: #f74747;
 
-  --gray50: #f9fafb;
-  --gray100: #f3f4f6;
-  --gray200: #e5e7eb;
-  --gray400: #9ca3af;
-  --gray500: #6b7280;
-  --gray600: #4b5563;
-  --gray700: #374151;
-  --gray800: #1f2937;
-  --gray900: #111827;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
 }
 
-/* Tablet, Mobile 기기에 따라 폰트 크기 조정*/
 @media (768px <= width < 1200px) {
   :root {
     font-size: 14px;

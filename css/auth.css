@@ -51,25 +51,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--gray100);
+  background-color: var(--gray-100);
   border-radius: 12px;
   height: 3.5rem;
   padding: 1rem 1.5rem;
 }
 
 .form__field-input-wrapper--focused:focus-within {
-  outline: 2px solid var(--blue100);
+  outline: 2px solid var(--blue-100);
 }
 
 .form__field-input {
-  color: var(--gray800);
+  color: var(--gray-800);
   font-weight: 400;
-  background-color: var(--gray100);
+  background-color: var(--gray-100);
   width: 100%;
 }
 
 .form__field-input::placeholder {
-  color: var(--gray400);
+  color: var(--gray-400);
 }
 
 .form__field-toggle-button {
@@ -78,10 +78,10 @@
 }
 
 .form__submit-button {
-  color: var(--gray100);
+  color: var(--gray-100);
   font-size: 1.25rem;
   font-weight: 600;
-  background-color: var(--blue100);
+  background-color: var(--blue-100);
   border-radius: 2.5rem;
   width: 100%;
   padding: 1rem 0;
@@ -89,7 +89,7 @@
 }
 
 .form__submit-button--disabled:disabled {
-  background-color: var(--gray400);
+  background-color: var(--gray-400);
   cursor: not-allowed;
 }
 
@@ -97,7 +97,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e6f2ff;
+  background-color: var(--blue-50);
   width: 100%;
   padding: 1rem 2.5rem;
 }
@@ -114,7 +114,7 @@
 }
 
 .helper-text__link {
-  color: var(--blue100);
+  color: var(--blue-100);
   text-decoration: underline;
 }
 
