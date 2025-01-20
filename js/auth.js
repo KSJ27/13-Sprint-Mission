@@ -1,23 +1,11 @@
-import { isEmpty } from "./utils.js";
+import {
+  isEmpty,
+  isEmailValid,
+  isPwdValid,
+  applyClass,
+  removeClass,
+} from "./utils.js";
 
-const formInputs = document.querySelectorAll(".form__field-input");
-const submitButton = document.querySelector(".form__submit-button--disabled");
-
-const updateSubmitButton = () => {
-  const isFormFilled = Array.from(formInputs)
-    .map((input) => input.value)
-    .every((string) => !isEmpty(string));
-
-  submitButton.disabled = !isFormFilled;
-};
-
-formInputs.forEach((input) => {
-  input.addEventListener("input", updateSubmitButton);
-});
-
-updateSubmitButton();
-
-const emailRegex = new RegExp("/^S+@S+.S+$/");
 const emailEmptyMessage = "이메일을 입력해주세요.";
 const emailPatternMessage = "잘못된 이메일 형식입니다.";
 const pwdEmptyMessage = "비밀번호를 입력해주세요.";
@@ -25,41 +13,67 @@ const pwdPatternMessage = "비밀번호를 8자 이상 입력해주세요.";
 const pwdMismatchMessage = "비밀번호가 일치하지 않습니다..";
 const nicknameEmptyMessage = "닉네임을 입력해주세요.";
 
+const formInputs = document.querySelectorAll(".form__field-input");
+const submitButton = document.querySelector(".form__submit-button");
 const emailInput = document.querySelector("#email");
-const emailInputWrapper = document.querySelector(".email");
-const emailErrorContainer = document.querySelector(".email-error-container");
+const emailInputWrapper = document.querySelector(
+  ".form__field-input-wrapper--email"
+);
+const emailMsgContainer = document.querySelector(".form__msg-container--email");
 const pwdInput = document.querySelector("#password");
-const pwdInputWrapper = document.querySelector(".password");
-const pwdErrorContainer = document.querySelector(".password-error-container");
+const pwdInputWrapper = document.querySelector(
+  ".form__field-input-wrapper--password"
+);
+const pwdMsgContainer = document.querySelector(
+  ".form__msg-container--password"
+);
 
-const handleEmailError = (e) => {
-  const input = e.target.value;
+const isFormValid = () =>
+  Array.from(formInputs).every(
+    (input) => !input.classList.contains("error") && !isEmpty(input.value)
+  );
 
-  if (isEmpty(input)) {
-    emailErrorContainer.textContent = emailEmptyMessage;
-    emailInputWrapper.classList.toggle("error");
-  } else if (!emailRegex.test(input)) {
-    emailErrorContainer.textContent = emailPatternMessage;
-    emailInputWrapper.classList.toggle("error");
+const handleEmailFocusout = (e) => {
+  const email = e.target.value;
+
+  if (!isEmailValid(email)) {
+    applyClass(emailInputWrapper, "error");
+    emailMsgContainer.textContent = isEmpty(email)
+      ? emailEmptyMessage
+      : emailPatternMessage;
+    return;
   } else {
-    emailErrorContainer.textContent = "";
+    removeClass(emailInputWrapper, "error");
+    emailMsgContainer.textContent = "";
   }
+
+  submitButton.disabled = !isFormValid();
 };
 
-emailInput.addEventListener("focusout", handleEmailError);
+const handlePwdFocusout = (e) => {
+  const pwd = e.target.value;
 
-const handlePwdError = (e) => {
-  const input = e.target.value;
-
-  if (isEmpty(input)) {
-    pwdErrorContainer.textContent = pwdEmptyMessage;
-    pwdInputWrapper.classList.toggle("error");
-  } else if (!emailRegex.test(input)) {
-    pwdErrorContainer.textContent = pwdPatternMessage;
-    pwdInputWrapper.classList.toggle("error");
+  if (!isPwdValid(pwd)) {
+    applyClass(pwdInputWrapper, "error");
+    pwdMsgContainer.textContent = isEmpty(pwd)
+      ? pwdEmptyMessage
+      : pwdPatternMessage;
+    return;
   } else {
-    pwdErrorContainer.textContent = "";
+    removeClass(pwdInputWrapper, "error");
+    pwdMsgContainer.textContent = "";
   }
+
+  submitButton.disabled = !isFormValid();
 };
 
-pwdInput.addEventListener("focusout", handlePwdError);
+emailInput.addEventListener("focusout", handleEmailFocusout);
+pwdInput.addEventListener("focusout", handlePwdFocusout);
+
+const handleInputFocusin = () => {
+  submitButton.disabled = true;
+};
+
+formInputs.forEach((inputNode) =>
+  inputNode.addEventListener("focusin", handleInputFocusin)
+);

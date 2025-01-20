@@ -15,7 +15,7 @@
         <div class="form__field">
           <label for="email" class="form__field-label">이메일</label>
           <div
-            class="form__field-input-wrapper form__field-input-wrapper--focused email"
+            class="form__field-input-wrapper form__field-input-wrapper--focused form__field-input-wrapper--email"
           >
             <input
               class="form__field-input"
@@ -25,12 +25,12 @@
               required
             />
           </div>
-          <div class="email-error-container"></div>
+          <div class="form__msg-container--email"></div>
         </div>
         <div class="form__field">
           <label for="password" class="form__field-label">비밀번호</label>
           <div
-            class="form__field-input-wrapper form__field-input-wrapper--focused password"
+            class="form__field-input-wrapper form__field-input-wrapper--focused form__field-input-wrapper--password"
           >
             <input
               class="form__field-input"
@@ -43,11 +43,12 @@
               <img src="../assets/ic_visibility_off.svg" alt="비밀번호 표시" />
             </button>
           </div>
-          <div class="password-error-container"></div>
+          <div class="form__msg-container--password"></div>
         </div>
         <button
           class="form__submit-button form__submit-button--disabled"
           type="submit"
+          disabled
         >
           로그인
         </button>
