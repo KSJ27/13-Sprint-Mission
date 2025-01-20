@@ -2,7 +2,6 @@ import {
   isEmpty,
   isEmailValid,
   isPwdValid,
-  isPwdMatched,
   applyClass,
   removeClass,
 } from "./utils.js";
@@ -11,8 +10,6 @@ const ERROR_EMAIL_EMPTY = "이메일을 입력해주세요.";
 const ERROR_EMAIL_PATTERN = "잘못된 이메일 형식입니다.";
 const ERROR_PASSWORD_EMPTY = "비밀번호를 입력해주세요.";
 const ERROR_PASSWORD_PATTERN = "비밀번호를 8자 이상 입력해주세요.";
-const ERROR_PASSWORD_MISMATCH = "비밀번호가 일치하지 않습니다.";
-const ERROR_NICKNAME_EMPTY = "닉네임을 입력해주세요.";
 
 const IMG_VISIBLE_ON = "../assets/ic_visibility_on.svg";
 const IMG_VISIBLE_OFF = "../assets/ic_visibility_off.svg";
@@ -34,33 +31,12 @@ const pwdInputWrapper = document.querySelector(
 const pwdMsgContainer = document.querySelector(
   ".form__msg-container--password"
 );
-const nicknameInput = document.querySelector("#nickname");
-const nicknameInputWrapper = document.querySelector(
-  ".form__field-input-wrapper--nickname"
-);
-const nicknameMsgContainer = document.querySelector(
-  ".form__msg-container--nickname"
-);
-const confirmPwdInput = document.querySelector("#confirm-password");
-const confirmPwdInputWrapper = document.querySelector(
-  ".form__field-input-wrapper--confirm-password"
-);
-const confirmPwdMsgContainer = document.querySelector(
-  ".form__msg-container--confirm-password"
-);
 
-// TODO 선택자 수정
 const pwdVisiblityButton = document.querySelector(
   ".form__field-button.form__field-button--password"
 );
 const pwdVisiblityButtonImg = document.querySelector(
   ".form__field-image.form__field-image--password"
-);
-const confirmPwdVisiblityButton = document.querySelector(
-  ".form__field-button.form__field-button--confirm-password"
-);
-const confirmPwdVisiblityButtonImg = document.querySelector(
-  ".form__field-image.form__field-image--confirm-password"
 );
 
 const handleInputFocusin = () => {
@@ -116,43 +92,10 @@ const handlePwdFocusout = (e) => {
   submitButton.disabled = !isFormValid();
 };
 
-const handleNicknameFocusout = (e) => {
-  const nickname = e.target.value;
-
-  if (isEmpty(nickname)) {
-    applyClass(nicknameInputWrapper, "error");
-    nicknameMsgContainer.textContent = ERROR_NICKNAME_EMPTY;
-    return;
-  } else {
-    removeClass(nicknameInputWrapper, "error");
-    nicknameMsgContainer.textContent = "";
-  }
-
-  submitButton.disabled = !isFormValid();
-};
-
-const handleConfirmPwdFocusout = (e) => {
-  const pwd = pwdInput.value;
-  const confirmPwd = e.target.value;
-
-  if (!isPwdMatched(pwd, confirmPwd)) {
-    applyClass(confirmPwdInputWrapper, "error");
-    confirmPwdMsgContainer.textContent = ERROR_PASSWORD_MISMATCH;
-    return;
-  } else {
-    removeClass(confirmPwdInputWrapper, "error");
-    confirmPwdMsgContainer.textContent = "";
-  }
-
-  submitButton.disabled = !isFormValid();
-};
-
 emailInput.addEventListener("focusout", handleEmailFocusout);
 pwdInput.addEventListener("focusout", handlePwdFocusout);
-nicknameInput.addEventListener("focusout", handleNicknameFocusout);
-confirmPwdInput.addEventListener("focusout", handleConfirmPwdFocusout);
 
-const createVisibilityToggleHandler = (input, image) => {
+export const createVisibilityToggleHandler = (input, image) => {
   let visible = false;
 
   return function onClickToggleButton() {
@@ -166,9 +109,4 @@ const createVisibilityToggleHandler = (input, image) => {
 pwdVisiblityButton.addEventListener(
   "click",
   createVisibilityToggleHandler(pwdInput, pwdVisiblityButtonImg)
-);
-
-confirmPwdVisiblityButton.addEventListener(
-  "click",
-  createVisibilityToggleHandler(confirmPwdInput, confirmPwdVisiblityButtonImg)
 );
