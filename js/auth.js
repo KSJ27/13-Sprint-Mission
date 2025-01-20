@@ -47,7 +47,7 @@ formInputs.forEach((inputNode) =>
   inputNode.addEventListener("focusin", handleInputFocusin)
 );
 
-const isFormValid = () => {
+export const isFormValid = () => {
   const isInputsEmpty = Array.from(formInputs).some((input) =>
     isEmpty(input.value)
   );

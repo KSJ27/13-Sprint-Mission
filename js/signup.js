@@ -1,5 +1,5 @@
 import { isEmpty, isPwdMatched, applyClass, removeClass } from "./utils.js";
-import { createVisibilityToggleHandler } from "./auth.js";
+import { isFormValid, createVisibilityToggleHandler } from "./auth.js";
 
 const ERROR_PASSWORD_MISMATCH = "비밀번호가 일치하지 않습니다.";
 const ERROR_NICKNAME_EMPTY = "닉네임을 입력해주세요.";
@@ -26,6 +26,8 @@ const confirmPwdVisiblityButton = document.querySelector(
 const confirmPwdVisiblityButtonImg = document.querySelector(
   ".form__field-image.form__field-image--confirm-password"
 );
+
+const submitButton = document.querySelector(".form__submit-button");
 
 const handleNicknameFocusout = (e) => {
   const nickname = e.target.value;
