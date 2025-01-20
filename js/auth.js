@@ -49,8 +49,19 @@ const confirmPwdMsgContainer = document.querySelector(
   ".form__msg-container--confirm-password"
 );
 
-const pwdVisiblityButton = document.querySelector(".form__field-button");
-const pwdVisiblityButtonImg = document.querySelector(".form__field-image");
+// TODO 선택자 수정
+const pwdVisiblityButton = document.querySelector(
+  ".form__field-button.form__field-button--password"
+);
+const pwdVisiblityButtonImg = document.querySelector(
+  ".form__field-image.form__field-image--password"
+);
+const confirmPwdVisiblityButton = document.querySelector(
+  ".form__field-button.form__field-button--confirm-password"
+);
+const confirmPwdVisiblityButtonImg = document.querySelector(
+  ".form__field-image.form__field-image--confirm-password"
+);
 
 const handleInputFocusin = () => {
   submitButton.disabled = true;
@@ -141,7 +152,7 @@ pwdInput.addEventListener("focusout", handlePwdFocusout);
 nicknameInput.addEventListener("focusout", handleNicknameFocusout);
 confirmPwdInput.addEventListener("focusout", handleConfirmPwdFocusout);
 
-const setToggleButton = (input, image) => {
+const createVisibilityToggleHandler = (input, image) => {
   let visible = false;
 
   return function onClickToggleButton() {
@@ -154,5 +165,10 @@ const setToggleButton = (input, image) => {
 
 pwdVisiblityButton.addEventListener(
   "click",
-  setToggleButton(pwdInput, pwdVisiblityButtonImg)
+  createVisibilityToggleHandler(pwdInput, pwdVisiblityButtonImg)
+);
+
+confirmPwdVisiblityButton.addEventListener(
+  "click",
+  createVisibilityToggleHandler(confirmPwdInput, confirmPwdVisiblityButtonImg)
 );
