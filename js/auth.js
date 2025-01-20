@@ -77,3 +77,22 @@ const handleInputFocusin = () => {
 formInputs.forEach((inputNode) =>
   inputNode.addEventListener("focusin", handleInputFocusin)
 );
+
+const toggleButton = document.querySelector(".form__field-button");
+const buttonImage = document.querySelector(".form__field-image");
+
+const IMG_VISIBLE_ON = "../assets/ic_visibility_on.svg";
+const IMG_VISIBLE_OFF = "../assets/ic_visibility_off.svg";
+
+const setToggleButton = (input, image) => {
+  let visible = false;
+
+  return function onClickToggleButton() {
+    visible = !visible;
+
+    input.type = visible ? "text" : "password";
+    image.src = visible ? IMG_VISIBLE_ON : IMG_VISIBLE_OFF;
+  };
+};
+
+toggleButton.addEventListener("click", setToggleButton(pwdInput, buttonImage));

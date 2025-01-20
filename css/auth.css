@@ -72,7 +72,7 @@
   color: var(--gray-400);
 }
 
-.form__field-toggle-button {
+.form__field-button {
   background-color: inherit;
   cursor: pointer;
 }
