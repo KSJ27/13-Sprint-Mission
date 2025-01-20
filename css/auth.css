@@ -130,10 +130,6 @@
   outline: 2px solid var(--red);
 }
 
-.email-error-container {
-  color: var(--red);
-}
-
-.password-error-container {
+.form__msg-container {
   color: var(--red);
 }
