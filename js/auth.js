@@ -6,12 +6,15 @@ import {
   removeClass,
 } from "./utils.js";
 
-const emailEmptyMessage = "이메일을 입력해주세요.";
-const emailPatternMessage = "잘못된 이메일 형식입니다.";
-const pwdEmptyMessage = "비밀번호를 입력해주세요.";
-const pwdPatternMessage = "비밀번호를 8자 이상 입력해주세요.";
-const pwdMismatchMessage = "비밀번호가 일치하지 않습니다..";
-const nicknameEmptyMessage = "닉네임을 입력해주세요.";
+const ERROR_EMAIL_EMPTY = "이메일을 입력해주세요.";
+const ERROR_EMAIL_PATTERN = "잘못된 이메일 형식입니다.";
+const ERROR_PASSWORD_EMPTY = "비밀번호를 입력해주세요.";
+const ERROR_PASSWORD_PATTERN = "비밀번호를 8자 이상 입력해주세요.";
+const ERROR_PASSWORD_MISMATCH = "비밀번호가 일치하지 않습니다.";
+const ERROR_NICKNAME_EMPTY = "닉네임을 입력해주세요.";
+
+const IMG_VISIBLE_ON = "../assets/ic_visibility_on.svg";
+const IMG_VISIBLE_OFF = "../assets/ic_visibility_off.svg";
 
 const formInputs = document.querySelectorAll(".form__field-input");
 const submitButton = document.querySelector(".form__submit-button");
@@ -27,6 +30,8 @@ const pwdInputWrapper = document.querySelector(
 const pwdMsgContainer = document.querySelector(
   ".form__msg-container--password"
 );
+const pwdVisiblityButton = document.querySelector(".form__field-button");
+const pwdVisiblityButtonImg = document.querySelector(".form__field-image");
 
 const isFormValid = () =>
   Array.from(formInputs).every(
@@ -39,8 +44,8 @@ const handleEmailFocusout = (e) => {
   if (!isEmailValid(email)) {
     applyClass(emailInputWrapper, "error");
     emailMsgContainer.textContent = isEmpty(email)
-      ? emailEmptyMessage
-      : emailPatternMessage;
+      ? ERROR_EMAIL_EMPTY
+      : ERROR_EMAIL_PATTERN;
     return;
   } else {
     removeClass(emailInputWrapper, "error");
@@ -56,8 +61,8 @@ const handlePwdFocusout = (e) => {
   if (!isPwdValid(pwd)) {
     applyClass(pwdInputWrapper, "error");
     pwdMsgContainer.textContent = isEmpty(pwd)
-      ? pwdEmptyMessage
-      : pwdPatternMessage;
+      ? ERROR_PASSWORD_EMPTY
+      : ERROR_PASSWORD_PATTERN;
     return;
   } else {
     removeClass(pwdInputWrapper, "error");
@@ -78,12 +83,6 @@ formInputs.forEach((inputNode) =>
   inputNode.addEventListener("focusin", handleInputFocusin)
 );
 
-const toggleButton = document.querySelector(".form__field-button");
-const buttonImage = document.querySelector(".form__field-image");
-
-const IMG_VISIBLE_ON = "../assets/ic_visibility_on.svg";
-const IMG_VISIBLE_OFF = "../assets/ic_visibility_off.svg";
-
 const setToggleButton = (input, image) => {
   let visible = false;
 
@@ -95,4 +94,7 @@ const setToggleButton = (input, image) => {
   };
 };
 
-toggleButton.addEventListener("click", setToggleButton(pwdInput, buttonImage));
+pwdVisiblityButton.addEventListener(
+  "click",
+  setToggleButton(pwdInput, pwdVisiblityButtonImg)
+);
