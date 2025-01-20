@@ -1,5 +1,5 @@
-@import "global.css";
 @import "reset.css";
+@import "global.css";
 
 .body {
   display: flex;
