@@ -3,135 +3,134 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/landing.css" />
     <title>판다마켓</title>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://pandamarket-seokjun.netlify.app/"
+    />
+    <meta property="og:title" content="판다 마켓" />
+    <meta property="og:image" content="assets/thumbnail.png" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:locale" content="ko_KR" />
+    <!-- Twitter(X) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="판다 마켓" />
+    <meta name="twitter:image" content="assets/thumbnail.png" />
+    <meta
+      name="twitter:description"
+      content="일상의 모든 물건을 거래해보세요"
+    />
   </head>
   <body>
-    <header>
-      <div class="header-footer-container">
-        <a class="buttom-home" href="/">
-          <img src="images/logo_sm.svg" alt="판다마켓 로고" />
+    <header class="header">
+      <div class="header__container">
+        <a class="header__button" href="/">
+          <img src="assets/logo_sm.svg" alt="판다마켓 로고" />
         </a>
-        <a href="/login" class="button-login">로그인</a>
+        <a href="/pages/login.html" class="header__button--primary">로그인</a>
       </div>
     </header>
     <main>
-      <section class="hero-last-section">
-        <div class="hero-last-section-container">
-          <div class="feature-content">
-            <h2 class="feature-content-title">
-              일상의 모든 물건을 <br />거래해 보세요
-            </h2>
-            <div class="button-items">
-              <a href="/items"> 구경하러 가기 </a>
-            </div>
+      <section class="hero">
+        <div class="hero__container">
+          <div class="hero__content">
+            <h2 class="hero__title">일상의 모든 물건을 거래해 보세요</h2>
+            <button class="hero__button">
+              <a href="/pages/items.html"> 구경하러 가기 </a>
+            </button>
           </div>
-          <img
-            class="hero-last-section-image"
-            src="images/Img_home_top.png"
-            alt="판다마켓 사진"
-          />
+          <img src="assets/Img_home_top.png" alt="판다마켓 사진" />
         </div>
       </section>
-      <section class="features-section">
-        <div class="feature-item">
+      <section class="feature-list">
+        <div class="feature">
           <img
-            class="feature-image"
-            src="images/Img_home_01.png"
+            class="feature__image"
+            src="assets/Img_home_01.png"
             alt="인기 상품 사진"
           />
-          <div class="feature-content">
-            <div class="feature-content-tag">Hot item</div>
-            <h2 class="feature-content-title">
-              인기 상품을 <br />
-              확인해 보세요
-            </h2>
-            <div class="feature-content-text">
-              가장 HOT한 중고거래 물품을 <br />
-              판다 마켓에서 확인해 보세요
+          <div class="feature__content">
+            <div class="feature__tag">Hot item</div>
+            <h2 class="feature__title">인기 상품을 확인해 보세요</h2>
+            <div class="feature__text">
+              가장 HOT한 중고거래 물품을 판다 마켓에서 확인해 보세요
             </div>
           </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-content">
-            <div class="feature-content-tag">search</div>
-            <h2 class="feature-content-title">
-              구매를 원하는 <br />
-              상품을 검색하세요
-            </h2>
-            <div class="feature-content-text">
-              구매하고 싶은 물품은 검색해서 <br />
-              쉽게 찾아보세요
-            </div>
-          </div>
+        <div class="feature feature--reverse">
           <img
-            class="feature-image"
-            src="images/Img_home_02.png"
+            class="feature__image"
+            src="assets/Img_home_02.png"
             alt="상품 검색 사진"
           />
+          <div class="feature__content feature__content--reverse">
+            <div class="feature__tag feature__tag--reverse">search</div>
+            <h2 class="feature__title feature__title--reverse">
+              구매를 원하는 상품을 검색하세요
+            </h2>
+            <div class="feature__text feature__text--reverse">
+              구매하고 싶은 물품은 검색해서 쉽게 찾아보세요
+            </div>
+          </div>
         </div>
-        <div class="feature-item">
+        <div class="feature">
           <img
-            class="feature-image"
-            src="images/Img_home_03.png"
+            class="feature__image"
+            src="assets/Img_home_03.png"
             alt="상품 등록 사진"
           />
-          <div class="feature-content">
-            <div class="feature-content-tag">Register</div>
-            <h2 class="feature-content-title">
-              판매를 원하는 <br />
-              상품을 등록하세요
-            </h2>
-            <div class="feature-content-text">
-              어떤 물건이든 판매하고 싶은 상품을 <br />
-              쉽게 등록하세요
+          <div class="feature__content">
+            <div class="feature__tag">Register</div>
+            <h2 class="feature__title">판매를 원하는 상품을 등록하세요</h2>
+            <div class="feature__text">
+              어떤 물건이든 판매하고 싶은 상품을 쉽게 등록하세요
             </div>
           </div>
         </div>
       </section>
-      <section class="hero-last-section">
-        <div class="hero-last-section-container">
-          <h2 class="feature-content-title">
-            믿을 수 있는<br />
-            판다마켓 중고 거래
-          </h2>
-          <img
-            class="hero-last-section-image"
-            src="images/Img_home_bottom.png"
-            alt="판다마켓 사진"
-          />
+      <section class="hero">
+        <div class="hero__container">
+          <div class="hero__content">
+            <h2 class="hero__title">믿을 수 있는 판다마켓 중고 거래</h2>
+          </div>
+          <img src="assets/Img_home_bottom.png" alt="판다마켓 사진" />
         </div>
       </section>
     </main>
-    <footer>
-      <div class="header-footer-container">
-        <div class="copyright">©codeit - 2024</div>
-        <div class="footer-links">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/faq">FAQ</a>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="foooter__text">©codeit - 2024</div>
+        <div class="footer__links">
+          <div class="footer__pages">
+            <a href="/pages/privacy.html">Privacy Policy</a>
+            <a href="/pages/faq.html">FAQ</a>
+          </div>
+          <ul class="footer__socials">
+            <li>
+              <a target="_blank" href="https://www.facebook.com/">
+                <img src="assets/ic_facebook.svg" alt="페이스북으로 이동" />
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.twitter.com/">
+                <img src="assets/ic_twitter.svg" alt="트위터로 이동" />
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.youtube.com/">
+                <img src="assets/ic_youtube.svg" alt="유튜브로 이동" />
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.instagram.com/">
+                <img src="assets/ic_instagram.svg" alt="인스타그램으로 이동" />
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul class="footer-social">
-          <li>
-            <a target="_blank" href="https://www.facebook.com/">
-              <img src="images/ic_facebook.svg" alt="페이스북으로 이동" />
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.twitter.com/">
-              <img src="images/ic_twitter.svg" alt="트위터로 이동" />
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.youtube.com/">
-              <img src="images/ic_youtube.svg" alt="유튜브로 이동" />
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.instagram.com/">
-              <img src="images/ic_instagram.svg" alt="인스타그램으로 이동" />
-            </a>
-          </li>
-        </ul>
       </div>
     </footer>
   </body>

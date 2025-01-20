@@ -1,0 +1,276 @@
+@import "global.css";
+@import "reset.css";
+
+.header {
+  background-color: #ffffff;
+  border-bottom: solid 1px #dfdfdf;
+  position: sticky;
+  top: 0px;
+  padding: 0.5rem 0;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1980px;
+  gap: 20px;
+  padding: 0 200px;
+  margin: 0 auto;
+}
+
+.header__button--primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  font-weight: 600;
+  background-color: var(--blue100);
+  height: 48px;
+  width: 128px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.header__button--primary:visited {
+  color: var(--gray100);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-color: #cfe5ff;
+  height: 540px;
+}
+
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1980px;
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.hero__button {
+  color: #ffffff;
+  background-color: var(--blue100);
+  border-radius: 40px;
+  padding: 1.25rem 7.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+  margin: 1.75rem 0;
+  word-break: keep-all;
+  width: 20rem;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 138px;
+  padding-top: 138px;
+  padding-bottom: 276px;
+}
+
+.feature {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fcfcfc;
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+.feature--reverse {
+  flex-direction: row-reverse;
+}
+
+.feature__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1.75rem;
+  margin: 1.75rem 0;
+  word-break: keep-all;
+  width: 20rem;
+}
+
+.feature__content--reverse {
+  align-items: end;
+}
+
+.feature__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.feature__title--reverse {
+  text-align: right;
+}
+
+.feature__tag {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--blue100);
+}
+
+.feature__tag--reverse {
+  text-align: right;
+}
+
+.feature__text {
+  font-size: 1.5rem;
+}
+
+.feature__text--reverse {
+  text-align: right;
+}
+
+.footer {
+  font-weight: 400;
+  color: var(--gray400);
+  background-color: var(--gray900);
+  height: 160px;
+  padding-top: 40px;
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  max-width: 1980px;
+  gap: 20px;
+  padding: 0 200px;
+  margin: 0 auto;
+}
+
+.foooter__text {
+  flex-grow: 1;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.footer__pages {
+  display: flex;
+  gap: 0 30px;
+  font-weight: 400;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 0 12px;
+}
+
+/* Tablet */
+@media (768px <= width < 1200px) {
+  .header__container {
+    padding: 0 24px;
+  }
+
+  .hero {
+    align-items: stretch;
+  }
+
+  .hero__container {
+    flex-direction: column;
+  }
+
+  .hero__content {
+    width: 100%;
+  }
+
+  .feature__content {
+    width: 100%;
+  }
+
+  .feature__content-reverse {
+    width: 100%;
+  }
+
+  .feature {
+    flex-direction: column;
+  }
+
+  .feature__reverse {
+    flex-direction: column;
+  }
+
+  .footer__container {
+    padding: 0 24px;
+  }
+}
+
+/* Mobile */
+@media (375px <= width < 768px) {
+  .header__container {
+    padding: 0 24px;
+  }
+
+  .hero {
+    align-items: stretch;
+  }
+
+  .hero__container {
+    flex-direction: column;
+  }
+
+  .hero__content {
+    width: 100%;
+    margin-top: 5rem;
+  }
+
+  .feature__content {
+    width: 100%;
+  }
+
+  .feature__content-reverse {
+    width: 100%;
+  }
+
+  .feature {
+    flex-direction: column;
+  }
+
+  .feature__reverse {
+    flex-direction: column;
+  }
+
+  .footer__container {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: start;
+    gap: 5rem;
+    padding: 0 24px;
+  }
+
+  .footer__links {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}

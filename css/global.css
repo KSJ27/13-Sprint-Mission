@@ -26,3 +26,16 @@
   --gray800: #1f2937;
   --gray900: #111827;
 }
+
+/* Tablet, Mobile 기기에 따라 폰트 크기 조정*/
+@media (768px <= width < 1200px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (375px <= width < 768px) {
+  :root {
+    font-size: 12px;
+  }
+}

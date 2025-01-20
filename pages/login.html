@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="../css/auth.css" />
+  </head>
+  <body class="body">
+    <main class="main">
+      <a class="main__button-top" href="/">
+        <img src="../assets/logo_lg.svg" alt="판다마켓 로고" />
+      </a>
+      <form action="submit" class="form">
+        <div class="form__field">
+          <label for="email" class="form__field-label">이메일</label>
+          <div
+            class="form__field-input-wrapper form__field-input-wrapper--focused"
+          >
+            <input
+              class="form__field-input"
+              id="email"
+              type="email"
+              placeholder="이메일을 입력해주세요"
+              required
+            />
+          </div>
+        </div>
+        <div class="form__field">
+          <label for="password" class="form__field-label">비밀번호</label>
+          <div
+            class="form__field-input-wrapper form__field-input-wrapper--focused"
+          >
+            <input
+              class="form__field-input"
+              id="password"
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
+              required
+            />
+            <button type="button" class="form__field-toggle-button">
+              <img
+                src="../assets/ic_visibility_off.svg"
+                alt="비밀번호 가리기"
+              />
+            </button>
+          </div>
+        </div>
+        <button
+          class="form__submit-button form__submit-button--disabled"
+          type="submit"
+        >
+          로그인
+        </button>
+      </form>
+      <div class="social-login">
+        간편 로그인하기
+        <ul class="social-login__list">
+          <li>
+            <a href="https://www.google.com/">
+              <img src="../assets/ic_google.svg" alt="구글 소셜로그인" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kakaocorp.com/page/">
+              <img src="../assets/ic_kakaoTalk.svg" alt="카카오 소셜로그인" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="helper-text">
+        판다마켓이 처음이신가요?
+        <a href="/pages/signup.html" class="helper-text__link">회원가입</a>
+      </div>
+    </main>
+  </body>
+  <script type="module" src="../js/auth.js"></script>
+</html>

@@ -1,29 +1,31 @@
-@import "../global.css";
-@import "../reset.css";
+@import "global.css";
+@import "reset.css";
 
-body {
+.body {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  width: 100%;
+  padding: 0 16px;
 }
 
-main {
+.main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  width: 50%;
-  margin: 64px auto;
-  width: 600px;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 640px;
 }
 
-.button-home {
+.main__button-top {
   margin-bottom: 1.5rem;
 }
 
-.auth-form {
+.form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,7 +34,7 @@ main {
   width: 100%;
 }
 
-.form-field {
+.form__field {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,12 +42,12 @@ main {
   gap: 1rem;
 }
 
-.form-field-label {
+.form__field-label {
   font-weight: 700;
   font-size: 1.125rem;
 }
 
-.form-field-input-wrapper {
+.form__field-input-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,43 +60,43 @@ main {
 /*
 :focus-within이란 - 스스로 :focus 의사 클래스와 일치하거나, 그 자손 중 하나가 :focus와 일치하는 요소를 나타냄
 */
-.form-field-input-wrapper:focus-within {
+.form__field-input-wrapper--focused:focus-within {
   outline: 2px solid var(--blue100);
 }
 
-.form-field-input {
+.form__field-input {
   color: var(--gray800);
   font-weight: 400;
   background-color: var(--gray100);
   width: 100%;
 }
 
-.form-field-input::placeholder {
+.form__field-input::placeholder {
   color: var(--gray400);
 }
 
-.input-visibility-button {
+.form__field-toggle-button {
   background-color: inherit;
   cursor: pointer;
 }
 
-.form-button-submit {
+.form__submit-button {
   color: var(--gray100);
   font-size: 1.25rem;
   font-weight: 600;
-  background-color: var(--gray400);
+  background-color: var(--blue100);
   border-radius: 2.5rem;
   width: 100%;
   padding: 1rem 0;
-  cursor: not-allowed;
-}
-
-.form-button-submit.active {
-  background-color: var(--blue100);
   cursor: pointer;
 }
 
-.social-login-container {
+.form__submit-button--disabled:disabled {
+  background-color: var(--gray400);
+  cursor: not-allowed;
+}
+
+.social-login {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,7 +105,7 @@ main {
   padding: 1rem 2.5rem;
 }
 
-.social-login-container > ul {
+.social-login__list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,7 +116,15 @@ main {
   font-size: 0.875rem;
 }
 
-a.helper-text-link {
+.helper-text__link {
   color: var(--blue100);
   text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (375px <= width < 768px) {
+  .main {
+    max-width: 400px;
+  }
 }
