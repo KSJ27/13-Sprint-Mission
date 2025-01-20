@@ -15,7 +15,7 @@
         <div class="form__field">
           <label for="email" class="form__field-label">이메일</label>
           <div
-            class="form__field-input-wrapper form__field-input-wrapper--focused"
+            class="form__field-input-wrapper form__field-input-wrapper--focused form__field-input-wrapper--email"
           >
             <input
               class="form__field-input"
@@ -25,11 +25,12 @@
               required
             />
           </div>
+          <div class="form__msg-container form__msg-container--email"></div>
         </div>
         <div class="form__field">
           <label for="nickname" class="form__field-label">닉네임</label>
           <div
-            class="form__field-input-wrapper form__field-input-wrapper--focused"
+            class="form__field-input-wrapper form__field-input-wrapper--focused form__field-input-wrapper--nickname"
           >
             <input
               class="form__field-input"
@@ -39,11 +40,12 @@
               required
             />
           </div>
+          <div class="form__msg-container form__msg-container--nickname"></div>
         </div>
         <div class="form__field">
           <label for="password" class="form__field-label">비밀번호</label>
           <div
-            class="form__field-input-wrapper form__field-input-wrapper--focused"
+            class="form__field-input-wrapper form__field-input-wrapper--focused form__field-input-wrapper--password"
           >
             <input
               class="form__field-input"
@@ -59,17 +61,18 @@
               />
             </button>
           </div>
+          <div class="form__msg-container form__msg-container--password"></div>
         </div>
         <div class="form__field">
           <label for="password-check" class="form__field-label">
             비밀번호 확인
           </label>
           <div
-            class="form__field-input-wrapper form__field-input-wrapper--focused"
+            class="form__field-input-wrapper form__field-input-wrapper--focused form__field-input-wrapper--confirm-password"
           >
             <input
               class="form__field-input"
-              id="password-check"
+              id="confirm-password"
               type="password"
               placeholder="비밀번호를 다시 한 번 입력해주세요"
               required
@@ -81,10 +84,14 @@
               />
             </button>
           </div>
+          <div
+            class="form__msg-container form__msg-container--confirm-password"
+          ></div>
         </div>
         <button
           class="form__submit-button form__submit-button--disabled"
           type="submit"
+          disabled
         >
           회원가입
         </button>
